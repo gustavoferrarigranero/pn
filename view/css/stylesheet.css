@@ -13,6 +13,8 @@ body{
 a{text-decoration:none;}
 a:hover{text-decoration:underline;}
 .break{clear:both;width:100%;}
+.erro{padding:5px 10px;height:25px;line-height:25px;;background:#F66;border:1px solid #F00;font-weight:bold;}
+.sucesso{padding:5px 10px;height:25px;line-height:25px;;background:#0C6;border:1px solid #090;font-weight:bold;}
 .bar{
 	position:absolute;
 	top:0px;
@@ -30,6 +32,8 @@ a:hover{text-decoration:underline;}
 }
 .bar .cad{
 	float:right;
+	color:#FFF;
+	font-size:24px;
 }
 .bar .cad a{
 	color:#FFF;
@@ -47,7 +51,7 @@ a:hover{text-decoration:underline;}
 	color:#FFF;
 }
 #center{
-	margin:190px auto 0px auto;
+	margin:150px auto 0px auto;
 	width:1003px;
 }
 #center .left{
@@ -107,5 +111,39 @@ a:hover{text-decoration:underline;}
 	float:right;
 	font-size:18px;
 	color:#000;
+}
+#center .menu{
+	display:table;
+	height:auto;
+	padding:25px;
+	font-size:18px;
+	color:#FFF;
+	background:#000;
+	margin:auto;
+	box-shadow: 3px 3px 4px #333;
+}
+#center .menu-title{
+	display:table;
+	height:auto;
+	padding:25px;
+	font-size:24px;
+	color:#000;
+	margin:0px auto 0px auto; 
+	font-weight:bold;
+}
+#center .menu a{
+	display:inline-block;
+	padding:15px 20px;
+	font-size:18px;
+	color:#FFF;
+	text-align:left;
+	font-weight:bold;
+}
+
+#center .cadastro,#center .minhaconta{
+	margin:auto;
+	font-size:14px;
+	color:#000;
+	font-weight:bold;
 }
 

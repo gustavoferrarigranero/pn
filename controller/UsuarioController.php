@@ -9,15 +9,23 @@ class UsuarioController{
 	}
 
 	public function inserir($dados = array()){
-
-		$this->usuarioModel->inserir($dados);
+		
+		if(!$this->usuarioModel->verificaEmail($dados['email'])){
+			$this->usuarioModel->inserir($dados);
+			$_SESSION['sucesso'] = "Usuário cadastrado com sucesso, faça seu login!";
+			$_SESSION['usuario'] = $this->get($this->lastId())->row;
+		}else{
+			$_SESSION['erro'] = "Email ja cadastrado!";
+		}
 		
 	}
 	
 	public function alterar($dados = array()){
 		
-		$this->usuarioModel->alterar($dados);
-		
+		if($this->usuarioModel->alterar($dados)){
+			$_SESSION['sucesso'] = "Dados alterados com sucesso!";
+			$_SESSION['usuario'] = $this->get($_SESSION['usuario']['id_usuario'])->row;
+		}
 	}
 	
 	public function excluir($dados = array()){
@@ -30,6 +38,28 @@ class UsuarioController{
 	public function listar($dados = array()){
 		
 		return $this->usuarioModel->listar($dados);
+		
+	}
+	
+	public function get($id){
+		
+		return $this->usuarioModel->get($id);
+		
+	}
+	
+	public function verificaLogin($dados = array()){
+		$login = $this->usuarioModel->verificaLogin($dados);
+		if($login){
+			$_SESSION['sucesso'] = $login;
+		}else{
+			$_SESSION['erro'] = "Dados inválidos!";
+		}
+		
+	}
+	
+	public function lastId(){
+		
+		return $this->usuarioModel->lastId();
 		
 	}
 

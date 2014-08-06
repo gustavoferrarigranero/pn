@@ -85,12 +85,10 @@ final class Connection {
 
 				} else {
 					return true;
-
 				}
 
 			} else {
 
-				$query->num_rows = 0;
 				trigger_error('Error: ' . mysql_error($this->link) . '<br />Error No: ' . mysql_errno($this->link) . '<br />' . $sql);
 
 				exit();
