@@ -16,9 +16,10 @@ class OlheiroController{
 	
 	public function alterar($dados = array()){
 		
-		if($this->usuarioModel->alterar($dados)){
+		if($this->olheiroModel->alterar($dados)){
 			$_SESSION['sucesso'] = "Dados alterados com sucesso!";
-			$_SESSION['usuario'] = $this->get($_SESSION['usuario']['id_usuario'])->row;
+			unset($_SESSION['usuario']);
+			$_SESSION['usuario'] = $this->get($dados['id_olheiro'])->row;
 		}
 		
 	}
@@ -38,7 +39,7 @@ class OlheiroController{
 	
 	public function get($id){
 		
-		return $this->usuarioModel->get($id);
+		return $this->olheiroModel->get($id);
 		
 	}
 	

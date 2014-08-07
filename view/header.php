@@ -56,7 +56,7 @@ if(strpos($_SERVER['REQUEST_URI'],"index.php") || $_SERVER['REQUEST_URI'] == "/p
             <form action="" method="post">
             	<input type="hidden" name="login" value="1" />
                 Login <input type="text" name="email" style="width:200px;"/> &nbsp; &nbsp; &nbsp; 
-                Senha <input type="text" name="senha" /> &nbsp; &nbsp;
+                Senha <input type="password" name="senha" /> &nbsp; &nbsp;
                 <input type="submit" value="OK" />
             </form>
         </div>

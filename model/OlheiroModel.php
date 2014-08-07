@@ -13,7 +13,7 @@ class OlheiroModel {
   
     public function listar() {
 
-        return $this->connection->query("SELECT id_olheiro, nome, cpf, telefone, celular, endereco, cidade, estado, numero, entidade, email, senha FROM tb_olheiros ORDER BY nome");
+        return $this->connection->query("SELECT id_olheiro, nome, cpf,rg, telefone, celular, endereco,bairro,cep, cidade, estado, numero, entidade, email, senha,tipo FROM tb_olheiros ORDER BY nome");
 		
     }
 
@@ -27,22 +27,22 @@ class OlheiroModel {
 
     public function inserir($dados) {
 
-       $this->connection->query("INSERT INTO tb_olheiros (nome, cpf, telefone, celular, endereco, cidade, estado, numero, entidade, email, senha)
-        VALUES ('".$dados['nome']."', '".$dados['cpf']."', '".$dados['telefone']."', '".$dados['celular']."', 					'".$dados['endereco']."', '".$dados['cidade']."', '".$dados['estado']."', '".$dados['numero']."', '".$dados['entidade']."', '".$dados['email']."', '".$dados['senha']."')");
+       return $this->connection->query("INSERT INTO tb_olheiros (nome, cpf,rg, telefone, celular, endereco,bairro,cep, cidade, estado, numero, entidade, email, senha)
+        VALUES ('".$dados['nome']."', '".$dados['cpf']."', '".$dados['rg']."', '".$dados['telefone']."', '".$dados['celular']."', 					'".$dados['endereco']."','".$dados['bairro']."','".$dados['cep']."', '".$dados['cidade']."', '".$dados['estado']."', '".$dados['numero']."', '".$dados['entidade']."', '".$dados['email']."', '".$dados['senha']."')");
 		
     }
 
 
     public function alterar($dados) {
 		
-		$this->connection->query("UPDATE tb_olheiros SET nome = '".$dados['nome']."', cpf = '".$dados['cpf']."', telefone = '".$dados['telefone']."', celular = '".$dados['celular']."', endereco = '".$dados['endereco']."',cidade = '".$dados['cidade']."', estado = '".$dados['estado']."', numero = '".$dados['numero']."',entidade = '".$dados['entidade']."',email = '".$dados['email']."', senha = '".$dados['senha']."' WHERE id_olheiro = '".$dados['id_olheiro']."'");
+		return $this->connection->query("UPDATE tb_olheiros SET nome = '".$dados['nome']."', cpf = '".$dados['cpf']."', rg = '".$dados['rg']."', telefone = '".$dados['telefone']."', celular = '".$dados['celular']."', endereco = '".$dados['endereco']."', bairro = '".$dados['bairro']."', cep = '".$dados['cep']."',cidade = '".$dados['cidade']."', estado = '".$dados['estado']."', numero = '".$dados['numero']."',entidade = '".$dados['entidade']."',email = '".$dados['email']."', senha = '".$dados['senha']."' WHERE id_olheiro = '".$dados['id_olheiro']."'");
 			
     }
 
 
     public function excluir() {
 
-        $this->connection->query("DELETE FROM tb_olheiros where id_olheiro = ".(int)$id);
+       return  $this->connection->query("DELETE FROM tb_olheiros where id_olheiro = ".(int)$id);
     }
 	
 	public function verificaLogin($dados){

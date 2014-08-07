@@ -39,7 +39,7 @@ a:hover{text-decoration:underline;}
 	color:#FFF;
 	font-size:24px;
 }
-.bar .login input[type=text]{
+.bar .login input[type=text],.bar .login input[type=password]{
 	height:30px;
 	border-radius:5px;
 }

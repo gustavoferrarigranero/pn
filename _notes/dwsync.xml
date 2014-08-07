@@ -5,9 +5,14 @@
 <file name="novidades.php" server="C:/xampp/htdocs/pn/" local="130517169610000000" remote="130517169610000000" Dst="1" />
 <file name="dicas.php" server="C:/xampp/htdocs/pn/" local="130517175110000000" remote="130517175110000000" Dst="1" />
 <file name="quemsomos.php" server="C:/xampp/htdocs/pn/" local="130517175420000000" remote="130517175420000000" Dst="1" />
-<file name="home.php" server="C:/xampp/htdocs/pn/" local="130518172851698891" remote="130518172850000000" Dst="1" />
-<file name="minha-conta.php" server="C:/xampp/htdocs/pn/" local="130518137843873462" remote="130518137840000000" Dst="1" />
+<file name="home.php" server="C:/xampp/htdocs/pn/" local="130518973210000000" remote="130518973210000000" Dst="1" />
+<file name="minha-conta.php" server="C:/xampp/htdocs/pn/" local="130518177701329716" remote="130518177700000000" Dst="1" />
 <file name="logout.php" server="C:/xampp/htdocs/pn/" local="130518080489190342" remote="130518080480000000" Dst="1" />
 <file name="cadastro.php" server="C:/xampp/htdocs/pn/" local="130518208818486093" remote="130518208810000000" Dst="1" />
-<file name="cadastro-peneira.php" server="C:/xampp/htdocs/pn/" local="130518137840000000" remote="130518137840000000" Dst="1" />
+<file name="cadastro-peneira.php" server="C:/xampp/htdocs/pn/" local="130518253216903976" remote="130518253210000000" Dst="1" />
+<file name="visualizar-peneira.php" server="C:/xampp/htdocs/pn/" local="130518983042060001" remote="130518983040000000" Dst="1" />
+<file name="listar-peneiras.php" server="C:/xampp/htdocs/pn/" local="130518961650000000" remote="130518961650000000" Dst="1" />
+<file name="listar-jogadores.php" server="C:/xampp/htdocs/pn/" local="130518970940000000" remote="130518970940000000" Dst="1" />
+<file name="visualizar-jogador.php" server="C:/xampp/htdocs/pn/" local="130518976100000000" remote="130518976100000000" Dst="1" />
+<file name="alterar-peneira.php" server="C:/xampp/htdocs/pn/" local="130518960380000000" remote="130518960380000000" Dst="1" />
 </dwsync>

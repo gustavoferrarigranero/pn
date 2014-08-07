@@ -11,6 +11,7 @@ class PeneiraController{
 	public function inserir($dados = array()){
 
 		$this->peneiraModel->inserir($dados);
+		$_SESSION['sucesso'] = $this->lastId();
 		
 	}
 	
@@ -30,6 +31,18 @@ class PeneiraController{
 	public function listar($dados = array()){
 		
 		return $this->peneiraModel->listar($dados);
+		
+	}
+	
+	public function get($id){
+		
+		return $this->peneiraModel->get($id);
+		
+	}
+	
+	public function lastId(){
+		
+		return $this->peneiraModel->lastId();
 		
 	}
 

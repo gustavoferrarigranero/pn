@@ -1,5 +1,7 @@
 <?php
 require_once("config.php");
+require_once("controller/PeneiraController.php");
+$controller = new PeneiraController();
 if(!isset($_SESSION['usuario']) || !$_SESSION['usuario']){
 	if($_SESSION['usuario'] == 1){
 		header("Location: ".URL);	
@@ -9,10 +11,7 @@ if(!isset($_SESSION['usuario']) || !$_SESSION['usuario']){
 	exit();
 }
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	require_once("controller/PeneiraController.php");
-	$controller = new PeneiraController();
-	$controller->inserir($_POST);
-	
+	$controller->alterar($_POST);
 	if($_SESSION['sucesso']){
 		$id_peneira = $_SESSION['sucesso'];
 		unset($_SESSION['sucesso']);
@@ -21,6 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	}
 	
 }
+
+
+$peneira = $controller->get($_GET['id_peneira'])->row ;
 require_once("view/header.php");
 ?>
 <script type="text/javascript" src="view/javascript/jquery-ui/external/jquery/jquery.js"></script>
@@ -57,28 +59,28 @@ require_once("view/header.php");
 		unset($_SESSION['sucesso']);
 	}
 	?>
-    <form action="cadastro-peneira.php" method="post" enctype="multipart/form-data">
+    <form action="alterar-peneira.php" method="post" enctype="multipart/form-data">
 		<table class="minhaconta">
         	<tr>
             	<td valign="top">
 
-                    Identificação: <br /><input type="text" name="identificacao" value="" /><br /><br />
+                    Identificação: <br /><input type="text" name="identificacao" value="<?php echo $peneira['identificacao'] ?>" /><br /><br />
                     
-                    Local: <br /><input type="text" name="local" value="" /><br /><br />
+                    Local: <br /><input type="text" name="local" value="<?php echo $peneira['local'] ?>" /><br /><br />
                     
-                    Cep: <br /><input type="text" name="cep" value="" /><br /><br />
+                    Cep: <br /><input type="text" name="cep" value="<?php echo $peneira['cep'] ?>" /><br /><br />
                     
-                    Cidade: <br /><input type="text" name="cidade" value="" /><br /><br />
+                    Cidade: <br /><input type="text" name="cidade" value="<?php echo $peneira['cidade'] ?>" /><br /><br />
                     
-                    Estado: <br /><input type="text" name="estado" value="" /><br /><br />
+                    Estado: <br /><input type="text" name="estado" value="<?php echo $peneira['estado'] ?>" /><br /><br />
                     
-                    Data: <br /><input type="text" name="data" value="" /><br /><br />
+                    Data: <br /><input type="text" name="data" value="<?php echo $peneira['data'] ?>" /><br /><br />
                     
-                    Hora Inicial: <br /><input type="text" name="hora_inicial" value="" /><br /><br />
+                    Hora Inicial: <br /><input type="text" name="hora_inicial" value="<?php echo $peneira['hora_inicial'] ?>" /><br /><br />
                     
-                    Número de Jogadores: <br /><input type="text" name="n_jogadores" value="" /><br /><br />
+                    Número de Jogadores: <br /><input type="text" name="n_jogadores" value="<?php echo $peneira['n_jogadores'] ?>" /><br /><br />
                     
-                    Duração: <br /><input type="text" name="duracao" value="" />hs<br /><br />
+                    Duração: <br /><input type="text" name="duracao" value="<?php echo $peneira['duracao'] ?>" />hs<br /><br />
 
                 </td>
             </tr>

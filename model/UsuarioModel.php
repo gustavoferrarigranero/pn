@@ -15,7 +15,7 @@ class UsuarioModel {
 
     public function listar() {
 
-        return $this->connection->query("SELECT id_usuario, nome, cpf, rg, escolaridade, telefone, celular, email, senha, endereco,bairro, numero, cidade,cep, estado, nome_pai, nome_mae, naturalidade, altura, peso, posicao, pe_preferido, caracteristicas, historico FROM tb_usuarios ORDER BY nome");
+        return $this->connection->query("SELECT id_usuario, nome, cpf, rg, escolaridade, telefone, celular, email, senha, endereco,bairro, numero, cidade,cep, estado, nome_pai, nome_mae, naturalidade, altura, peso, posicao, pe_preferido, caracteristicas, historico, tipo FROM tb_usuarios ORDER BY nome");
 		
     }
 
