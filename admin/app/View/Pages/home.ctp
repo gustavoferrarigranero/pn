@@ -1,0 +1,1 @@
+Editar como quiser em admin/app/view/pages/home.ctp
