@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Ago-2014 às 19:52
+-- Generation Time: 18-Ago-2014 às 15:40
 -- Versão do servidor: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -69,7 +69,8 @@ INSERT INTO `tb_olheiros` (`id_olheiro`, `nome`, `cpf`, `rg`, `telefone`, `celul
 CREATE TABLE IF NOT EXISTS `tb_peneiras` (
   `id_peneira` int(11) NOT NULL AUTO_INCREMENT,
   `identificacao` varchar(20) NOT NULL,
-  `local` varchar(30) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
+  `bairro` varchar(100) NOT NULL,
   `cep` varchar(9) NOT NULL,
   `cidade` varchar(20) NOT NULL,
   `estado` varchar(2) NOT NULL,
@@ -79,21 +80,19 @@ CREATE TABLE IF NOT EXISTS `tb_peneiras` (
   `duracao` time NOT NULL,
   `id_olheiro` int(11) NOT NULL,
   PRIMARY KEY (`id_peneira`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Extraindo dados da tabela `tb_peneiras`
 --
 
-INSERT INTO `tb_peneiras` (`id_peneira`, `identificacao`, `local`, `cep`, `cidade`, `estado`, `data`, `hora_inicial`, `n_jogadores`, `duracao`, `id_olheiro`) VALUES
-(1, 'peneira do santos', 'vila beumiro', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0),
-(2, '', '', '', 'sebastio paraiso', 'sp', '--', '00:00:00', 0, '00:00:00', 0),
-(4, 'peneira do santos', 'vila beumiro', '38578-473', 'santos', 'sp', '--', '12:00:00', 0, '02:00:00', 0),
-(5, 'peneira do verdão', 'palestra italia', '144070987', 'sao paulo', 'SP', '--', '12:00:00', 200, '02:00:00', 0),
-(6, 'peneira do inter', 'beira rio', '1440898', 'cidade', 'rs', '--', '12:00:00', 0, '02:00:00', 0),
-(7, 'asd', 'dfdf', 'dfds', 'fgf', 'sd', '2014-08-20', '00:00:00', 0, '00:00:00', 0),
-(8, 'asdas', 'sdfd', 'dfsdf', 'sdf', 'sd', 'sdf', '00:00:00', 12, '00:00:12', 0),
-(9, 'dg', 'hjg', 'gh', 'ghgh', 'gh', 'g', '00:00:00', 12, '00:00:12', 0);
+INSERT INTO `tb_peneiras` (`id_peneira`, `identificacao`, `endereco`, `bairro`, `cep`, `cidade`, `estado`, `data`, `hora_inicial`, `n_jogadores`, `duracao`, `id_olheiro`) VALUES
+(1, 'peneira do santos 1', '1', '2', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0),
+(2, 'peneira do santos 2', '2', '2', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0),
+(4, 'peneira do santos 3', '3', '3', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0),
+(5, 'peneira do santos 4', '4', '4', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0),
+(6, 'peneira do santos 5', '5', '4', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0),
+(8, 'peneira do santos 7', '', '', '38578-473', 'santos', 'sp', '--', '12:00:00', 100, '02:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -137,9 +136,9 @@ CREATE TABLE IF NOT EXISTS `tb_usuarios` (
 INSERT INTO `tb_usuarios` (`id_usuario`, `nome`, `cpf`, `rg`, `escolaridade`, `telefone`, `celular`, `email`, `senha`, `endereco`, `bairro`, `numero`, `cep`, `cidade`, `estado`, `nome_pai`, `nome_mae`, `naturalidade`, `altura`, `peso`, `posicao`, `pe_preferido`, `caracteristicas`, `historico`, `tipo`) VALUES
 (6, 'tiago', '', 2147483647, 'suerior', 1111, 99999, 'tiago@tiago.com', 123, 'rua 02', 'sadasdasd', 12, '111111', 'francaa', 'sp', 'joao', 'maria', 'francano', 1.9, 70, 'atacante', 'esquerdo', 'veloz', 'palmeiras', 1),
 (7, '', '', 0, '', 0, 0, '', 0, '', '', 0, '', 'franca', 'SP', '', '', '', 0, 0, '', '', '', '', 1),
-(8, 'renan', '', 0, '', 9999999, 99999999, 'renan@renan', 2424, 'rua 04', '', 5, '', 'sebastio paraiso', 'sp', '', '', '', 0, 0, '', '', '', '', 1),
-(11, 'dfgdfgfgdfg', '', 0, 'dfgdfg', 0, 0, 'tiago@tiago.com', 123, 'sdfsdfsdf', 'sdf', 0, 'dasdasd', 'asdas', 'da', 'asdasd', 'asd', 'sadas', 2, 3, '12', 'dasd', 'asdad', 'asdasd', 1),
-(14, 'dfgdfgfgdfg', 'dfgdfg', 0, 'dfgdfg', 0, 0, 'tiago@tiago.com', 123, 'sdfsdfsdf', 'sdf', 0, 'dasdasd', 'asdas', 'da', 'asdasd', 'asd', 'sadas', 2, 3, '12', 'dasd', 'asdad', 'asdasd', 1),
+(8, 'renan', '', 0, '', 9999999, 99999999, 'renan@renan', 2424, '1', '3', 5, '', 'sebastio paraiso', 'sp', '', '', '', 0, 0, '', '', '', '', 1),
+(11, 'dfgdfgfgdfg', '', 0, 'dfgdfg', 0, 0, 'tiago@tiago.com', 123, '3', '2', 0, 'dasdasd', 'asdas', 'da', 'asdasd', 'asd', 'sadas', 2, 3, '12', 'dasd', 'asdad', 'asdasd', 1),
+(14, 'dfgdfgfgdfg', 'dfgdfg', 0, 'dfgdfg', 0, 0, 'tiago@tiago.com', 123, '1', '5', 0, 'dasdasd', 'asdas', 'da', 'asdasd', 'asd', 'sadas', 2, 3, '12', 'dasd', 'asdad', 'asdasd', 1),
 (15, 'dsfsdf', 'dsfsdfsdfsdf', 0, 'fsdfsdfsdf', 0, 0, 'tiago22@tiago.com', 123, '4234', '34234234', 42342, '434234', '23423', '42', '23424', '234234', '3434', 34, 34, '34', 'sdfsd', 'dfsdf', 'sdfsdf', 1),
 (16, '', '', 0, '', 0, 0, 'tiago@tiago.com', 123, '', '', 0, '', '', '', '', '', '', 0, 0, '', '', '', '', 1),
 (17, '', '', 0, '', 0, 0, 'tiago@tiago.com', 123, '', '', 0, '', '', '', '', '', '', 0, 0, '', '', '', '', 1),

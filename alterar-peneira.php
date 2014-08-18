@@ -13,7 +13,7 @@ if(!isset($_SESSION['usuario']) || !$_SESSION['usuario']){
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$controller->alterar($_POST);
 	if($_SESSION['sucesso']){
-		$id_peneira = $_SESSION['sucesso'];
+		$id_peneira = $_POST['id_peneira'];
 		unset($_SESSION['sucesso']);
 		header("Location: ".URL."visualizar-peneira.php?id_peneira=".$id_peneira);
 		exit();
@@ -63,10 +63,14 @@ require_once("view/header.php");
 		<table class="minhaconta">
         	<tr>
             	<td valign="top">
-
+					
+                    <input type="hidden" name="id_peneira" value="<?php echo $peneira['id_peneira'] ?>" />
+                    
                     Identificação: <br /><input type="text" name="identificacao" value="<?php echo $peneira['identificacao'] ?>" /><br /><br />
                     
-                    Local: <br /><input type="text" name="local" value="<?php echo $peneira['local'] ?>" /><br /><br />
+                    Endereço: <br /><input type="text" name="local" value="<?php echo $peneira['endereco'] ?>" /><br /><br />
+                    
+                    Bairro: <br /><input type="text" name="local" value="<?php echo $peneira['bairro'] ?>" /><br /><br />
                     
                     Cep: <br /><input type="text" name="cep" value="<?php echo $peneira['cep'] ?>" /><br /><br />
                     
@@ -86,7 +90,7 @@ require_once("view/header.php");
             </tr>
             <tr>
             	<td align="center" style="padding-top:40px;">
-                	<input type="submit" value="Cadastrar Peneira" />
+                	<input type="submit" value="Alterar Peneira" />
                 </td>
             </tr>
         </table>

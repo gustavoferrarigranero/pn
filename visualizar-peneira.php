@@ -29,7 +29,9 @@ require_once("view/header.php");
 
                 Identificação: <?php echo $peneira['identificacao'] ?><br /><br />
                 
-                Local: <?php echo $peneira['local'] ?><br /><br />
+                Endereço: <?php echo $peneira['endereco'] ?><br /><br />
+                
+                Bairro: <?php echo $peneira['bairro'] ?><br /><br />
                 
                 Cep: <?php echo $peneira['cep'] ?><br /><br />
                 
@@ -50,7 +52,7 @@ require_once("view/header.php");
         <tr>
             <td valign="top" width="250"><br /><br />
 				<a href="<?php echo URL ?>alterar-peneira.php?id_peneira=<?php echo $peneira['id_peneira'] ?>" onclick="if(!confirm('Deseja realmente alterar?'))return false;">Alterar</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <a href="#?excluir=1&id_peneira=<?php echo $peneira['id_peneira'] ?>" onclick="if(!confirm('Deseja realmente excluir?'))return false;">Excluir</a>
+                <a href="?excluir=1&id_peneira=<?php echo $peneira['id_peneira'] ?>" onclick="if(!confirm('Deseja realmente excluir?'))return false;">Excluir</a>
             </td>
         </tr>
     </table>

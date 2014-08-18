@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="index.php" server="C:/xampp/htdocs/pn/" local="130517279181367619" remote="130517279180000000" Dst="1" />
-<file name="config.php" server="C:/xampp/htdocs/pn/" local="130518024676463026" remote="130518024670000000" Dst="1" />
-<file name="novidades.php" server="C:/xampp/htdocs/pn/" local="130517169610000000" remote="130517169610000000" Dst="1" />
-<file name="dicas.php" server="C:/xampp/htdocs/pn/" local="130517175110000000" remote="130517175110000000" Dst="1" />
-<file name="quemsomos.php" server="C:/xampp/htdocs/pn/" local="130517175420000000" remote="130517175420000000" Dst="1" />
 <file name="home.php" server="C:/xampp/htdocs/pn/" local="130518973210000000" remote="130518973210000000" Dst="1" />
-<file name="minha-conta.php" server="C:/xampp/htdocs/pn/" local="130518177701329716" remote="130518177700000000" Dst="1" />
-<file name="logout.php" server="C:/xampp/htdocs/pn/" local="130518080489190342" remote="130518080480000000" Dst="1" />
-<file name="cadastro.php" server="C:/xampp/htdocs/pn/" local="130518208818486093" remote="130518208810000000" Dst="1" />
-<file name="cadastro-peneira.php" server="C:/xampp/htdocs/pn/" local="130518253216903976" remote="130518253210000000" Dst="1" />
-<file name="visualizar-peneira.php" server="C:/xampp/htdocs/pn/" local="130518983042060001" remote="130518983040000000" Dst="1" />
-<file name="listar-peneiras.php" server="C:/xampp/htdocs/pn/" local="130518961650000000" remote="130518961650000000" Dst="1" />
-<file name="listar-jogadores.php" server="C:/xampp/htdocs/pn/" local="130518970940000000" remote="130518970940000000" Dst="1" />
-<file name="visualizar-jogador.php" server="C:/xampp/htdocs/pn/" local="130518976100000000" remote="130518976100000000" Dst="1" />
-<file name="alterar-peneira.php" server="C:/xampp/htdocs/pn/" local="130518960380000000" remote="130518960380000000" Dst="1" />
+<file name="buscar-jogadores.php" server="C:/xampp/htdocs/pn/" local="130528370959007514" remote="130528370950000000" Dst="1" />
+<file name="buscar-jogadores-ajax.php" server="C:/xampp/htdocs/pn/" local="130518981900000000" remote="130518981900000000" Dst="1" />
+<file name="alterar-peneira.php" server="C:/xampp/htdocs/pn/" local="130528401819391285" remote="130528401810000000" Dst="1" />
+<file name="visualizar-peneira.php" server="C:/xampp/htdocs/pn/" local="130528403844223406" remote="130528403840000000" Dst="1" />
+<file name="cadastro-peneira.php" server="C:/xampp/htdocs/pn/" local="130518960388553371" remote="130518960380000000" Dst="1" />
+<file name="listar-peneiras.php" server="C:/xampp/htdocs/pn/" local="130518970945373917" remote="130518970940000000" Dst="1" />
+<file name="envia-email-jogador.php" server="C:/xampp/htdocs/pn/" local="130518029310000000" remote="130518029310000000" Dst="1" />
 </dwsync>

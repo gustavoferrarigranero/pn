@@ -17,7 +17,9 @@ class PeneiraController{
 	
 	public function alterar($dados = array()){
 		
-		$this->peneiraModel->alterar($dados);
+		if($this->peneiraModel->alterar($dados)){
+			$_SESSION['sucesso'] = "Peneira alterada com sucesso!";	
+		}
 		
 	}
 	

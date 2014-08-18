@@ -84,7 +84,15 @@ final class Connection {
 					return $query;	
 
 				} else {
-					return true;
+					
+					$query = new stdClass();
+
+					$query->row = false;
+
+					$query->rows = false;
+
+					$query->num_rows = 0 ;
+					return $query;
 				}
 
 			} else {

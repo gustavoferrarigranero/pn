@@ -45,9 +45,9 @@ if(strpos($_SERVER['REQUEST_URI'],"index.php") || $_SERVER['REQUEST_URI'] == "/p
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Joga 10 - Peneiras</title>
 <link rel="stylesheet" type="text/css" href="view/css/stylesheet.css"/>
-<script type="text/javascript" src="view/js/jquery.js"></script>
-<script type="text/javascript" src="view/js/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="view/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="view/javascript/jquery.js"></script>
+<script type="text/javascript" src="view/javascript/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="view/javascript/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
 <div class="bar">

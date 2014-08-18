@@ -9,9 +9,18 @@ class PeneiraModel {
 		$this->connection = new	Connection();
 	}
 
-    public function listar() {
+    public function listar($dados = array()) {
+		
+		$sql = "SELECT id_peneira, identificacao, endereco ,bairro , cep, cidade, estado, data, hora_inicial, n_jogadores, duracao FROM tb_peneiras WHERE id_peneira IS NOT NULL";
+		
+		if(isset($dados['filter_id_olheiro']) && $dados['filter_id_olheiro']){
+			$sql .= " AND id_olheiro = " . (int)$dados['filter_id_olheiro'] ;
+		}
+		
+		
+		$sql .= " ORDER BY identificacao " ;
 
-       return $this->connection->query("SELECT id_peneira, identificacao, local, cep, cidade, estado, data, hora_inicial, n_jogadores, duracao FROM tb_peneiras ORDER BY local");
+       return $this->connection->query($sql);
     }
 
 
@@ -23,14 +32,14 @@ class PeneiraModel {
 
     public function inserir($dados) {
 
-        $this->connection->query("INSERT INTO tb_peneiras (identificacao, local, cep, cidade, estado, data, hora_inicial, n_jogadores, duracao)  VALUES ('".$dados['identificacao']."','".$dados['local']."','".$dados['cep']."','".$dados['cidade']."','".$dados['estado']."','".$dados['data']."', '".$dados['hora_inicial']."', '".$dados['n_jogadores']."','".$dados['duracao']."')");
+        return $this->connection->query("INSERT INTO tb_peneiras (identificacao, endereco,bairro , cep, cidade, estado, data, hora_inicial, n_jogadores, duracao)  VALUES ('".$dados['identificacao']."','".$dados['endereco']."','".$dados['bairro']."','".$dados['cep']."','".$dados['cidade']."','".$dados['estado']."','".$dados['data']."', '".$dados['hora_inicial']."', '".$dados['n_jogadores']."','".$dados['duracao']."')");
 		
     }
 
 
     public function alterar($dados) {
 		
-		$this->connection->query("UPDATE tb_peneiras SET identificacao = '".$dados['identificacao']."',local = '".$dados['local']."', cep = '".$dados['cep']."', cidade = '".$dados['cidade']."', estado = '".$dados['estado']."', data = '".$dados['data']."', hora_inicial = '".$dados['hora_inicial']."', n_jogadores = '".$dados['n_jogadores']."', duracao = '".$dados['duracao']."'");
+		return $this->connection->query("UPDATE tb_peneiras SET identificacao = '".$dados['identificacao']."',endereco = '".$dados['endereco']."',bairro = '".$dados['bairro']."', cep = '".$dados['cep']."', cidade = '".$dados['cidade']."', estado = '".$dados['estado']."', data = '".$dados['data']."', hora_inicial = '".$dados['hora_inicial']."', n_jogadores = '".$dados['n_jogadores']."', duracao = '".$dados['duracao']."' WHERE id_peneira = '".$dados['id_peneira']."'");
 			 
     }
 

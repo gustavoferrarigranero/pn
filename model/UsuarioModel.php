@@ -9,13 +9,18 @@ class UsuarioModel {
 		$this->connection = new	Connection();	
 	}
 
-    
 
+    public function listar($dados = array()) {
 
+		$sql = "SELECT id_usuario, nome, cpf, rg, escolaridade, telefone, celular, email, senha, endereco,bairro, numero, cidade,cep, estado, nome_pai, nome_mae, naturalidade, altura, peso, posicao, pe_preferido, caracteristicas, historico, tipo FROM tb_usuarios  WHERE id_usuario IS NOT NULL ";
+		
+		if((isset($dados['campo']) && $dados['campo']) && (isset($dados['valor']) && $dados['valor'])){
+			$sql .= " AND ".$dados['campo']." = '" . $dados['valor'] . "' " ;
+		}
+		
+		$sql .= " ORDER BY nome ";
 
-    public function listar() {
-
-        return $this->connection->query("SELECT id_usuario, nome, cpf, rg, escolaridade, telefone, celular, email, senha, endereco,bairro, numero, cidade,cep, estado, nome_pai, nome_mae, naturalidade, altura, peso, posicao, pe_preferido, caracteristicas, historico, tipo FROM tb_usuarios ORDER BY nome");
+        return $this->connection->query($sql);
 		
     }
 

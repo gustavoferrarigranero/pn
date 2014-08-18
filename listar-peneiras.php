@@ -20,7 +20,8 @@ require_once("view/header.php");
 		<table class="minhaconta" style="background:#FFF;">
         	<tr style="background:#ccc">
             	<td valign="top">Identificação</td>
-                <td valign="top">Local</td>
+                <td valign="top">Endereço</td>
+                <td valign="top">Bairro</td>
                 <td valign="top">Cep</td>
                 <td valign="top">Cidade</td>
                 <td valign="top">Estado</td>
@@ -33,7 +34,8 @@ require_once("view/header.php");
             <?php foreach($peneiras as $peneira){ ?>
                 <tr>
                     <td valign="top" style="padding:10px;"><?php echo $peneira['identificacao'] ; ?></td>
-                    <td valign="top" style="padding:10px;"><?php echo $peneira['local'] ; ?></td>
+                    <td valign="top" style="padding:10px;"><?php echo $peneira['endereco'] ; ?></td>
+                    <td valign="top" style="padding:10px;"><?php echo $peneira['bairro'] ; ?></td>                    
                     <td valign="top" style="padding:10px;"><?php echo $peneira['cep'] ; ?></td>
                     <td valign="top" style="padding:10px;"><?php echo $peneira['cidade'] ; ?></td>
                     <td valign="top" style="padding:10px;"><?php echo $peneira['estado'] ; ?></td>

@@ -64,7 +64,9 @@ require_once("view/header.php");
 
                     Identificação: <br /><input type="text" name="identificacao" value="" /><br /><br />
                     
-                    Local: <br /><input type="text" name="local" value="" /><br /><br />
+                    Endereço: <br /><input type="text" name="endereco" value="" /><br /><br />
+                    
+                    Bairro: <br /><input type="text" name="bairro" value="" /><br /><br />
                     
                     Cep: <br /><input type="text" name="cep" value="" /><br /><br />
                     
